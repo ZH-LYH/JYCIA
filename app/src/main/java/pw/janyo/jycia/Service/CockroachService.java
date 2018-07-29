@@ -2,6 +2,7 @@ package pw.janyo.jycia.Service;
 import android.app.*;
 import android.content.*;
 import android.os.*;
+import android.util.Log;
 
 public class CockroachService extends Service
 {
@@ -10,8 +11,8 @@ public class CockroachService extends Service
 	public int onStartCommand(Intent intent, int flags, int startId)
 	{
 		// TODO: Implement this method
-		flags = START_STICKY;
-		return super.onStartCommand(intent, flags, startId);
+		super.onStartCommand(intent, flags, startId);
+		return START_STICKY;
 	}
 	
 	@Override
@@ -21,4 +22,12 @@ public class CockroachService extends Service
 		return null;
 	}
 
+	@Override
+	public void onDestroy()
+	{
+		Log.d("CockroachService","Restart Service");
+		Intent intent = new Intent(this,CockroachService.class);
+		startService(intent);
+		super.onDestroy();
+	}
 }

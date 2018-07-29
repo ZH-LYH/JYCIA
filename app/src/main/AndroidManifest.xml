@@ -19,13 +19,15 @@
             </intent-filter>
         </activity>
 		
-		<service android:name=".Service.CockroachService">
-			<intent-filter
-				android:priority="1000">
+		<service
+			android:name=".Service.CockroachService"
+			android:process="pw.janyo.cia.Service.CockroachService">
+			<intent-filter android:priority="1000">
+				<action android:name="pw.janyo.cia.Service.CockroachService" />
 			</intent-filter>
 		</service>
 		
-		<receiver android:name=".Receiver.BootUpReceiver">  
+		<receiver android:name=".Receiver.BootUpReceiver">
 			<intent-filter android:priority="1000">
 				<action android:name="android.intent.action.BOOT_COMPLETED"/>  
 				<category android:name="android.intent.category.HOME"/>  
