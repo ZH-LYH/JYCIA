@@ -6,6 +6,8 @@
  *
  */
 package pw.janyo.jycia;
+import pw.janyo.jycia.myInterface.*;
+import java.util.*;
 
 /*
  *CIAEngine
@@ -14,5 +16,30 @@ package pw.janyo.jycia;
  */
 public class CIAEngine
 {
-	CIAEngine(){}
+	List getterArray = new ArrayList();
+	CIAEngine(){
+		
+	}
+	
+	
+	/*
+	 *addGetter()
+	 *添加采集器
+	 *
+	 */
+	public void addGetter(IDataGetter getterMember)
+	{
+		getterArray.add(getterMember);
+	}
+	
+	/*
+	 *initEngine()
+	 *初始化引擎
+	 *
+	 */
+	 public void initEngine()
+	 {
+		 
+	 }
+	 
 }
