@@ -19,6 +19,9 @@
             </intent-filter>
         </activity>
 		
+		<service android:name=".Service.CockroachService">
+		</service>
+		
 		<receiver android:name=".Receiver.BootUpReceiver">  
 			<intent-filter>  
 				<action android:name="android.intent.action.BOOT_COMPLETED"/>  
