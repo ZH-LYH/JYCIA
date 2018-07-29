@@ -3,7 +3,7 @@ import android.app.*;
 import android.content.*;
 import android.os.*;
 
-public class BootUpService extends Service
+public class CockroachService extends Service
 {
 
 	@Override
