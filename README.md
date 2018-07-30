@@ -1,5 +1,1 @@
-#CIA
-##app for CG by JanYo Studio.
-
-#Editor
-ZH-LYH and DickLight.
+"JANYO CIA" FOR CITYGAY BY JANYO STUDIO. DON'T CLONE!!!
