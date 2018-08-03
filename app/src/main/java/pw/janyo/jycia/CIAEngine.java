@@ -83,7 +83,7 @@ public class CIAEngine
 			 if (gCF.equals(CF))
 			 {
 				 final DataGetter getter = m.get(gCF);
-				 new Runnable(){
+				 new Thread(new Runnable(){
 
 					 @Override
 					 public void run()
@@ -94,7 +94,7 @@ public class CIAEngine
 					 }
 
 
-				 };
+				 }).start();
 			 }
 		 }
 		
