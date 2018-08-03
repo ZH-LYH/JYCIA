@@ -83,7 +83,17 @@ public class CIAEngine
 			 if (gCF.equals(CF))
 			 {
 				 final DataGetter getter = m.get(gCF);
-				 new Runnable(){
+
+				 new Thread(new Runnable() {
+					 @Override
+					 public void run() {
+						 getter.init();
+						 getter.get(new GetterDoGetOptional(gCF));
+						 Log.d("Thread","Thread Run");
+					 }
+				 }).start();
+
+				/**new Runnable(){
 
 					 @Override
 					 public void run()
@@ -91,30 +101,27 @@ public class CIAEngine
 						 // TODO: Implement this method
 						 getter.init();
 						 getter.get(new GetterDoGetOptional(gCF));
+						 Log.d("Thread","Thread Run");
 					 }
 
-
-				 };
+				 };**/
 			 }
 		 }
 		
 	 }
 	 
-	 class GetterDoGetOptional implements IGetter
-	{
+	 class GetterDoGetOptional implements IGetter {
 
-		@Override
-		public void OnGetterReturn(CIAData data)
-		{
-			// TODO: Implement this method
-			//采集器采集到数据后回调
-			Log.d("[CIA DEBUG_FLAG]", data.getData().toString());
-		}
-		
-		 GetterDoGetOptional(String commandFlag)
-		 {
-			 
+		 @Override
+		 public void OnGetterReturn(CIAData data) {
+			 // TODO: Implement this method
+			 //采集器采集到数据后回调
+			 Log.d("[CIA DEBUG_FLAG]", data.getData().toString());
 		 }
+
+		 GetterDoGetOptional(String commandFlag) {
+
+		 }
+
 	 }
-	 
 }
