@@ -8,10 +8,9 @@ public class DemoBatteryValGetter extends DataGetter
 	BatteryManager bm;
 	String COMMAND_FLAG = "GET_BAT_NOW";
 	@Override
-	public void init(String cf)
+	public void init()
 	{
 		// TODO: Implement this method
-		super.init(cf);
 		bm = (BatteryManager)CIAApplication.getContext().getSystemService(CIAApplication.BATTERY_SERVICE);
 	}
 	
