@@ -11,8 +11,8 @@ public class DevTestDebug
 		DemoBatteryValGetter batGetter = new DemoBatteryValGetter();
 		DemoIMEIGetter imeiGetter = new DemoIMEIGetter();
 		
-		engine.addGetter("GET_BAT_NOW", batGetter);
-		engine.addGetter("GET_DEV_IMEI", imeiGetter);
+		engine.addGetter(batGetter);
+		engine.addGetter(imeiGetter);
 		engine.initEngine();
 		//engine.startGetter(); 等候网络中客户端的指令来自动选取需要工作的采集器 未实现
 		//Debug 用，手动给指令来选取采集器

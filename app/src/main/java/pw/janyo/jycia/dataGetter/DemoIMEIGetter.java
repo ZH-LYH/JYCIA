@@ -6,12 +6,11 @@ import pw.janyo.jycia.*;
 public class DemoIMEIGetter extends DataGetter
 {
 	TelephonyManager tm;
-
+    public String COMMAND_FLAG = "GET_DEV_ID";
 	@Override
 	public void init()
 	{
 		// TODO: Implement this method
-		super.init();
 		tm = (TelephonyManager)CIAApplication.getContext().getSystemService(CIAApplication.getContext().TELEPHONY_SERVICE);
 	}
 
@@ -21,7 +20,7 @@ public class DemoIMEIGetter extends DataGetter
 		// TODO: Implement this method
 		super.get(getterCallBack);
 		CIAData d = new CIAData();
-		d.setCommandFlag("GET_DEV_IMEI");
+		d.setCommandFlag(this.COMMAND_FLAG);
 		d.setData(tm.getDeviceId());
 		getterCallBack.OnGetterReturn(d);
 	}

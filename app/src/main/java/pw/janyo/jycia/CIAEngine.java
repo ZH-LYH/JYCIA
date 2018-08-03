@@ -31,9 +31,9 @@ public class CIAEngine
 	 *添加采集器
 	 *
 	 */
-	public void addGetter(String commandFlag, DataGetter getterMember)
+	public void addGetter(DataGetter getterMember)
 	{
-		m.put(commandFlag, getterMember);
+		m.put(getterMember.COMMAND_FLAG, getterMember);
 	}
 	
 	/*
