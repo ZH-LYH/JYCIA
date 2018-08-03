@@ -4,19 +4,18 @@ import android.content.*;
 
 public class CIAApplication extends Application
 {
-	private Context c;
-
+	private static CIAApplication context;
 	@Override
 	public void onCreate()
 	{
 		// TODO: Implement this method
 		super.onCreate();
-		c = getApplicationContext();
+		context = this;
 	}
 	
 	public static Context getContext()
 	{
-		return this.c;
+		return context;
 	}
 	
 }

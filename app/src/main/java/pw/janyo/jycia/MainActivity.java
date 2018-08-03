@@ -7,7 +7,6 @@ import android.os.Bundle;
 import pw.janyo.jycia.Service.CockroachService;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,5 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this,CockroachService.class);
         startService(intent);
+
+        DevTestDebug devTestDebug = new DevTestDebug();
+        devTestDebug.test();
     }
 }
