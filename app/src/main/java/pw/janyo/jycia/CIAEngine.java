@@ -101,8 +101,8 @@ public class CIAEngine
 						 // TODO: Implement this method
 						 getter.init();
 						 getter.get(new GetterDoGetOptional(gCF));
-						 Log.d("Thread","Thread Run");
 					 }
+
 
 				 };**/
 			 }
@@ -110,18 +110,21 @@ public class CIAEngine
 		
 	 }
 	 
-	 class GetterDoGetOptional implements IGetter {
+	 class GetterDoGetOptional implements IGetter
+	{
 
-		 @Override
-		 public void OnGetterReturn(CIAData data) {
-			 // TODO: Implement this method
-			 //采集器采集到数据后回调
-			 Log.d("[CIA DEBUG_FLAG]", data.getData().toString());
+		@Override
+		public void OnGetterReturn(CIAData data)
+		{
+			// TODO: Implement this method
+			//采集器采集到数据后回调
+			Log.d("[CIA DEBUG_FLAG]", data.getData().toString());
+		}
+		
+		 GetterDoGetOptional(String commandFlag)
+		 {
+			 
 		 }
-
-		 GetterDoGetOptional(String commandFlag) {
-
-		 }
-
 	 }
+	 
 }
