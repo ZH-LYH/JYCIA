@@ -1,5 +1,8 @@
 package pw.janyo.jycia.Receiver;
 import android.content.*;
+import android.util.Log;
+
+import pw.janyo.jycia.MainActivity;
 import pw.janyo.jycia.Service.*;
 
 public class BootUpReceiver extends BroadcastReceiver

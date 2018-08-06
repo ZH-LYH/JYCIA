@@ -78,6 +78,7 @@ public class CIAEngine
 	 {
 		 // final String gCF = null;
 		 //gCF = waitCommand(); //从网络等待客户端指令 未实现
+
 		 for(String CF:m.keySet())
 		 {
 			 if (gCF.equals(CF))
