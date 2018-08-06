@@ -21,8 +21,5 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this,CockroachService.class);
         startService(intent);
-
-        DevTestDebug devTestDebug = new DevTestDebug();
-        devTestDebug.test();
     }
 }
