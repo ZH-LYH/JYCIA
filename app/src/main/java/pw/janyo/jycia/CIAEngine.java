@@ -19,10 +19,10 @@ import android.util.*;
 public class CIAEngine 
 {
 	
-	Map<String, DataGetter> m = new HashMap<String, DataGetter>();
+	List<DataGetter> getters;
 	
 	CIAEngine(){
-		
+		getters = new ArrayList<DataGetter>();
 	}
 	
 	
@@ -33,7 +33,7 @@ public class CIAEngine
 	 */
 	public void addGetter(DataGetter getterMember)
 	{
-		m.put(getterMember.COMMAND_FLAG, getterMember);
+		getters.add(getterMember);
 	}
 	
 	/*
@@ -43,13 +43,13 @@ public class CIAEngine
 	 */
 	 public void initEngine()
 	 {
-		 for(String CF:m.keySet())
+		 for(DataGetter getter:getters)
 		 {
-			 m.get(CF).init();
+			 getter.init();
 		 }
 	 }
 	 
-	 public void startGetter()
+	 /*public void startGetter()
 	 {
 		 final String gCF = null;
 		 //gCF = waitCommand(); //从网络等待客户端指令 未实现
@@ -72,24 +72,21 @@ public class CIAEngine
 				 }).start();
 			 }
 		 }
-	}
+	}*/
 		 
 	 public void debugStartGetter(final String gCF)
 	 {
 		 // final String gCF = null;
 		 //gCF = waitCommand(); //从网络等待客户端指令 未实现
-
-		 for(String CF:m.keySet())
+		 for(final DataGetter getter:getters)
 		 {
-			 if (gCF.equals(CF))
+			 if (getter.COMMAND_FLAG.equals(gCF))
 			 {
-				 final DataGetter getter = m.get(gCF);
 
 				 new Thread(new Runnable() {
 					 @Override
 					 public void run() {
-						 getter.init();
-						 getter.get(new GetterDoGetOptional(gCF));
+						 getter.get(new GetterDoGetOptional());
 						 Log.d("Thread","Thread Run");
 					 }
 				 }).start();
@@ -122,7 +119,7 @@ public class CIAEngine
 			Log.d("[CIA DEBUG_FLAG]", data.getData().toString());
 		}
 		
-		 GetterDoGetOptional(String commandFlag)
+		 GetterDoGetOptional()
 		 {
 			 
 		 }

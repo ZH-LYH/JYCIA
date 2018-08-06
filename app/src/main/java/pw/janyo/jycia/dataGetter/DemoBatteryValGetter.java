@@ -20,7 +20,7 @@ public class DemoBatteryValGetter extends DataGetter
 	{
 		CIAData d = new CIAData();
 		d.setCommandFlag(this.COMMAND_FLAG);
-		d.setData(bm.BATTERY_PROPERTY_CURRENT_NOW);
+		d.setData(Integer.toString( bm.getIntProperty(bm.BATTERY_PROPERTY_CAPACITY)));
 		//Callback
 		getterCallBack.OnGetterReturn(d);
 	}
